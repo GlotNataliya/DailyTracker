@@ -13,7 +13,7 @@ const SeparateTeam = ({ activeTeam }) => {
       </nav>
       <main className="general-part">
         <aside className="general-part1">
-          <h2 className="general-part1__title">Team Lead</h2>
+          <h2 className="general-part1__title">Team&nbsp;Lead</h2>
           <span className="s-circlesmall-icon" alt="circle_small">
             <CircleSmall />
           </span>

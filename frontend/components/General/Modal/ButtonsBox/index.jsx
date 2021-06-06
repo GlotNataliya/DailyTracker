@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ModalButtons = ({handleModalClose}) => {
+const ModalButtons = ({ handleModalClose }) => {
   return (
     <div className="modal-buttons">
-      <button type="submit" className="right-button e-clickable submit-color" >
+      <button type="submit" className="right-button e-clickable submit-color">
         SAVE
       </button>
       <button type="button" className="right-button e-clickable cancel-color" onClick={handleModalClose}>

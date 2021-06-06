@@ -36,7 +36,7 @@ const EmployeeAddEdit = ({id, handleModalClose, updatedAt}) => {
     if (e.target.id == "e-employee") {
       handleModalClose();
     }
-  }
+  };
 
   const createUser = (data) => {
     const fetchData = async () => {
@@ -52,9 +52,9 @@ const EmployeeAddEdit = ({id, handleModalClose, updatedAt}) => {
       } catch (error) {
         setError("Error adding Employee");
       }
-    }
+    };
     fetchData();
-  }
+  };
 
   const updateUser = (id, data) => {
     const fetchData = async () => {
@@ -70,9 +70,9 @@ const EmployeeAddEdit = ({id, handleModalClose, updatedAt}) => {
       } catch (error) {
         setError("Error updating Employee");
       }
-    }
+    };
     fetchData();
-  }
+  };
 
   useEffect(() => {
     if (isEdit) {

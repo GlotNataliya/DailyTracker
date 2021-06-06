@@ -21,6 +21,7 @@
   grid-template-areas: 'aside footer';
   grid-template-columns: 21% auto;
   text-align: center;
+  position: relative;
 }
 
 .aside {
@@ -74,6 +75,42 @@
 .t-dimplus-icon {
   margin-right: 152px;
   margin-top: -33px;
+}
+
+.aside-name,
+.t-dimplus-icon,
+.aside-add-text {
+  cursor: pointer;
+}
+
+.aside-add-text {
+  color: var(--action-color);
+  margin-top: -23px;
+  margin-left: -15px;
+}
+
+.modal-background {
+  background-color: var(--modal-background-color);
+  text-align: start;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.modal-card {
+  background-color: var(--modal-color);
+  height: 260px;
+  margin: 200px auto;
+  padding: 20px;
+  position: relative;
+  width: 540px;
+}
+
+#name {
+  margin-left: -60px;
 }
 
 .footer {
@@ -141,7 +178,7 @@
 }
 
 .s-circlesmall-icon {
-  margin-left: 12.6%;
+  margin-left: 15.6%;
   margin-top: -66px;
   position: absolute;
 }
@@ -149,7 +186,7 @@
 .s-plus-icon {
   margin-top: -50px;
   position: absolute;
-  right: 34.36%;
+  right: 43.5%;
 }
 
 //.s-ball-icon {
@@ -187,11 +224,11 @@
   list-style: none;
   margin-top: 40px;
   position: relative;
-}
 
-.general-part2__name li {
-  margin-left: 60px;
-  text-align: left;
+  li {
+    margin-left: 60px;
+    text-align: left;
+  }
 }
 
 .s-ball2-icon {
