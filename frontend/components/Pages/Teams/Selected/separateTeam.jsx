@@ -13,7 +13,7 @@ const SeparateTeam = ({ activeTeam }) => {
       </nav>
       <main className="general-part">
         <aside className="general-part1">
-          <h2 className="general-part1__title">Team&nbsp;Lead</h2>
+          <h2 className="general-part1-title">Team&nbsp;Lead</h2>
           <span className="s-circlesmall-icon" alt="circle_small">
             <CircleSmall />
           </span>
@@ -31,16 +31,16 @@ const SeparateTeam = ({ activeTeam }) => {
           </span>
         </aside>
         <aside className="general-part2">
-          <h2 className="general-part2__title">Team Members</h2>
+          <h2 className="general-part2-title">Team Members</h2>
           <span className="s-circlesmall1-icon" alt="circle_small">
             <CircleSmall />
           </span>
           <span className="s-plus1-icon" alt="plus">
             <Plus />
           </span>
-          <div className="general-part2_content">
+          <div className="general-part2-content">
             {activeTeam.team_users.map((team_user) => (
-              <ul key={team_user.id} className="general-part2__name">
+              <ul key={team_user.id} className="general-part2-name">
                 <li>
                   {team_user.user.first_name} {team_user.user.last_name}
                   <span className="s-ball2-icon" alt="ball">

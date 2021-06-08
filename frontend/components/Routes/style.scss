@@ -32,11 +32,11 @@
 
 .header-links {
   list-style: none;
-}
 
-.header-links a {
-  color: var(--article-content-color);
-  text-decoration: none;
+  a {
+    color: var(--article-content-color);
+    text-decoration: none;
+  }
 }
 
 .nav-dashboard__link {
@@ -72,13 +72,13 @@
 }
 
 .circlebig-icon {
-  margin-top: -50px;
   margin-left: 178px;
+  margin-top: -50px;
 }
 
 .plus-icon {
-  margin-top: -53px;
   margin-left: 208px;
+  margin-top: -53px;
 }
 
 .nav-teams__link {
@@ -116,8 +116,8 @@
   align-content: center;
   background-color: var(--article-color);
   border-radius: 10px;
-  grid-area: nav;
   flex-direction: row;
+  grid-area: nav;
   justify-content: space-between;
 }
 
@@ -125,7 +125,7 @@
   font-size: 24px;
   font-weight: 500;
   line-height: 28px;
-  margin-left: 3.47%;
   margin-bottom: 0;
+  margin-left: 3.47%;
   margin-top: 5px;
 }
