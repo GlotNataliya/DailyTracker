@@ -1,10 +1,10 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
-import Team from 'components/Pages/Team';
+import Teams from 'components/Pages/Teams';
 import Dashboard from 'components/Pages/Dashboard';
 import Employee from 'components/Pages/Employee';
 import Setting from 'components/Pages/Setting';
-import './style.css';
+import './style';
 
 const Routes = () => {
   return (
@@ -16,7 +16,7 @@ const Routes = () => {
         <Employee />
       </Route>
       <Route exact path="/teams">
-        <Team />
+        <Teams />
       </Route>
       <Route exact path="/settings">
         <Setting />
