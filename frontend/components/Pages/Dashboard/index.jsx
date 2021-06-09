@@ -1,12 +1,14 @@
 import React from 'react';
+import NavDashboard from './Subpages/nav';
 
 const Dashboard = () => {
   return (
     <section className="section">
-    <nav className="nav">
-    <h3 className="all-names">Dashboard</h3>
-    </nav>
+      <NavDashboard />
+      <article className="d-article-content">
+      </article>
     </section>
   )
 }
+
 export default Dashboard

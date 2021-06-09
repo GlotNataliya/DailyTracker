@@ -1,13 +1,13 @@
 import React from 'react';
 import './style';
-import NavTeam from './Selected/nav';
-import TeamsList from './Selected/teamsList';
+import NavTeam from './Subpages/nav';
+import TeamsList from './Subpages/teamsList';
 
 const Teams = () => {
   return (
     <section className="section">
       <NavTeam />
-      <article className="article-content">
+      <article className="t-article-content">
         <TeamsList />
       </article>
     </section>
