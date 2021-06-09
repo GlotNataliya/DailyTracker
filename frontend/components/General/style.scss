@@ -1,27 +1,36 @@
 :root {
-  --action-color: #7aa3a6;
+  --alert-border-color: #b2acbe;
+  --alert-color: #c9c2d6;
+  --app-border-color: rgba(0, 0, 0, .12);
+  --app-input-color: rgba(51, 51, 51, .87);
+  --article-color: #f5f2f9;
+  --article-content-color: #333;
+  --background-color-mane-page: #cfcbd7;
+  --box-shadow-color: rgba(0, 0, 0, .16);
   --cancel-color: #e67979;
-  --main-color: rgb(245, 239, 239);
+  --footer-color: #f9f8fb;
   --modal-background-color: rgba(0, 0, 0, .3);
   --modal-color: #e5e5e5;
   --modal-underline-color: rgba(51, 51, 51, .5);
   --selected-color: #ccc;
   --shadow-color: rgba(0, 0, 0, .1);
+  --submit-background-color: #97b5b8;
   --submit-color: #a5c4c6;
+  --submit-focus-color: #a4c7ca;
   --submit-light: rgba(122, 163, 166, .12);
   --text-color: rgb(51, 51, 51);
   --x-close-color: #aaa;
   --x-close-hover-color: #000;
-  --footer-color: #fbf7f7;
-  --article-color: #f5efef;
-  --article-content-color: #333;
-  --alert-color: #c9c2d6;
-  --alert-border-color: #b2acbe;
-  --app-input-color: rgba(51, 51, 51, .87);
-  --app-border-color: rgba(0, 0, 0, .12);
-  --box-shadow-color: rgba(0, 0, 0, .16);
-  --submit-background-color: #97b5b8;
-  --submit-focus-color: #a4c7ca;
+}
+
+.d-article-content,
+.e-article-content,
+.t-article-content,
+.s-article-content {
+  background-color: var(--article-color);
+  border-radius: 10px;
+  grid-area: article;
+  position: relative;
 }
 
 .submit-color {
@@ -80,13 +89,11 @@
 
 .modal-title {
   color: var(--text-color);
-  font-family: Roboto;
   font-size: 36px;
 }
 
 .modal-caption {
   color: var(--text-color);
-  font-family: Roboto;
   font-size: 24px;
 }
 
@@ -112,7 +119,6 @@
 
   button {
     color: var(--text-color);
-    font-family: Roboto;
     font-size: 16px;
     margin-right: 20px;
   }

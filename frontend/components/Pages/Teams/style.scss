@@ -7,20 +7,16 @@
 }
 
 .person-icon {
-  margin-left: 65.9%;
+  margin-left: 47.4%;
   margin-top: 35px;
   position: absolute;
 }
 
-.article-content {
-  background-color: var(--article-color);
-  border-radius: 10px;
+.t-article-content {
   color: var(--article-content-color);
   display: grid;
-  grid-area: article;
   grid-template-areas: 'aside footer';
-  grid-template-columns: 21% auto;
-  position: relative;
+  grid-template-columns: 27.87% auto;
   text-align: center;
 }
 
@@ -244,7 +240,7 @@
 }
 
 .s-rubbish2-icon {
-  left: 510px;
+  left: 310px;
   margin-top: -4px;
   position: absolute;
 }

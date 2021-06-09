@@ -1,12 +1,6 @@
 @import 'components/General/style';
 
-.e-parent {
-  grid-area: article;
-  position: relative;
-}
-
 .e-color-layer {
-  background-color: var(--main-color);
   height: 100%;
   left: 0;
   position: absolute;
