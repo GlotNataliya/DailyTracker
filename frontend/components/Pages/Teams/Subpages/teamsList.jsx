@@ -1,53 +1,54 @@
 import React, { useEffect, useState } from 'react';
-import SeparateTeam from './separateTeam';
 import '../../Teams/style';
+import OpenModalWindow from './ModalWindow/openModalWindow';
+import ActiveTeam from './ActiveTeam/activeTeam';
 import { Ball, Person, Rubbish } from "components/General/Icons";
-import ModalWindow from './modalWindow';
 
 const TeamsList = () => {
   const [teams, setTeams] = useState([]);
-  const [activeTeam, setActiveTeam] = useState(null);
-  const [show, setShow] = useState(false);
-  const [newTeam, setNewTeam] = useState({ name: '' });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
+  const [activeTeam, setActiveTeam] = useState(null);
 
-  const handleModalClose = (e) => {
-    const currentClass = e.target.className;
-
-    if (currentClass === 'modal-card') {
-      return;
+  const handleRemove = id => {
+    var result = confirm("Do you want to remove the team?");
+    if (result) {
+      const token = document.querySelector('meta[name="csrf-token"]').content;
+      fetch(`api/v1/teams/${id}`, {
+        method: 'DELETE',
+        headers: {
+          "X-CSRF-Token": token,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(id)
+      })
+        .then(() => {
+          const newTeams = teams.filter((team) => team.id !== id);
+          setTeams(newTeams);
+        });
     }
-
-    setShow(false);
   };
 
-  const handleModalOpen = () => {
-    setShow(true);
-  };
-
-  const handleModalChange = (e) => {
-    setNewTeam({
-      name: e.target.value
-    });
-  };
-
-  const handleModalSubmit = (e) => {
-    e.preventDefault();
-
-    const token = document.querySelector('meta[name="csrf-token"]').content;
-    fetch('/api/v1/teams', {
-      method: 'POST',
-      headers: {
-        "X-CSRF-Token": token,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(newTeam)
-    })
-      .then((response) => response.json())
-      .then((newTeam) => setTeams(teams.concat(newTeam)))
-      .then(() => setShow(false));
-  };
+  const AllTeams = () => {
+    return (
+      teams.map((team) => (
+        <ul key={team.id} className="aside-name" onClick={() => setActiveTeam(team)}>
+          <li>
+            {team.name}
+            <div className="t-ball-icon" alt="ball">
+              <Ball />
+            </div>
+            <div className="t-person-icon" alt="person">
+              <Person />
+            </div>
+            <div className="t-rubbish-icon" alt="rubbish" title="delete" onClick={() => handleRemove(team.id)}>
+              <Rubbish />
+            </div>
+          </li>
+        </ul>
+      )
+      ))
+  }
 
   useEffect(() => {
     setLoading(true);
@@ -76,36 +77,10 @@ const TeamsList = () => {
     <>
       <aside className="aside">
         <h2 className="aside-title">Team&nbsp;name</h2>
-        {teams.map((team) => (
-          <ul key={team.id} className="aside-name" onClick={() => setActiveTeam(team)}>
-            <li>
-              {team.name}
-              <div className="t-ball-icon" alt="ball">
-                <Ball />
-              </div>
-              <div className="t-person-icon" alt="person">
-                <Person />
-              </div>
-              <div className="t-rubbish-icon" alt="rubbish">
-                <Rubbish />
-              </div>
-            </li>
-          </ul>
-        ))}
-        <ModalWindow show={show} newTitle={newTeam}
-          handleModalClose={handleModalClose} handleModalOpen={handleModalOpen}
-          handleModalChange={handleModalChange} handleModalSubmit={handleModalSubmit}
-        />
+        <AllTeams />
+        <OpenModalWindow teams={teams} setTeams={setTeams} />
       </aside>
-      <footer className="footer">
-        {activeTeam ? (
-          <ul className="footer-content">
-            <li>
-              {<SeparateTeam activeTeam={activeTeam} />}
-            </li>
-          </ul>
-        ) : null}
-      </footer>
+      <ActiveTeam activeTeam={activeTeam} />
     </>
   )
 }
