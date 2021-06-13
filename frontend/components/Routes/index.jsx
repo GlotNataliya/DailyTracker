@@ -2,8 +2,8 @@ import React from 'react';
 import { Switch, Route } from "react-router-dom";
 import Teams from 'components/Pages/Teams';
 import Dashboard from 'components/Pages/Dashboard';
-import Employee from 'components/Pages/Employee';
-import Setting from 'components/Pages/Setting';
+import Employee from 'components/Pages/Employees';
+import Setting from 'components/Pages/Settings';
 import './style';
 
 const Routes = () => {

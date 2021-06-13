@@ -5,7 +5,7 @@ import { Ellipse, SquareModule, PersonBig, TwoPersons, CircleBig, Plus, Gear } f
 const Header = () => {
   return (
     <header className="header">
-      <h1 className="header-name">Daily Tracker</h1>
+      <h1 className="header-name">Daily&nbsp;Tracker</h1>
       <div className="ellipse-icon" alt="ellipse">
         <Ellipse />
       </div>

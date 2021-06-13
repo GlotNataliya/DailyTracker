@@ -1,10 +1,9 @@
 import React from 'react';
-import '../../Teams/style';
 import { DullCircle, DimPlus } from "components/General/Icons";
 import ModalButtons from 'components/General/Modal/ButtonsBox';
 import PropTypes from 'prop-types';
 
-const ModalWindow = ({ show, newTitle, handleModalClose, handleModalOpen, handleModalChange, handleModalSubmit }) => {
+const ModalWindow = ({ show, newTeam, handleModalClose, handleModalOpen, handleModalChange, handleModalSubmit }) => {
   return (
     <>
       <div className="t-dullcircle-icon" alt="dull_circle">
@@ -27,7 +26,7 @@ const ModalWindow = ({ show, newTitle, handleModalClose, handleModalOpen, handle
                     id="name"
                     name="name"
                     className="modal-input"
-                    value={newTitle.name}
+                    value={newTeam.name}
                     onChange={handleModalChange}
                   />
                 </div>
@@ -47,7 +46,7 @@ ModalWindow.propTypes = {
   handleModalOpen: PropTypes.func.isRequired,
   handleModalChange: PropTypes.func.isRequired,
   handleModalSubmit: PropTypes.func.isRequired,
-  newTitle: PropTypes.shape({
+  newTeam: PropTypes.shape({
     name: PropTypes.string.isRequire
   })
 };
