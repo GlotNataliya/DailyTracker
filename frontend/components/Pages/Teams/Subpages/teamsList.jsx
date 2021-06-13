@@ -8,7 +8,7 @@ const TeamsList = () => {
   const [teams, setTeams] = useState([]);
   const [activeTeam, setActiveTeam] = useState(null);
   const [show, setShow] = useState(false);
-  const [newTitle, setNewTitle] = useState({ name: '' });
+  const [newTeam, setNewTeam] = useState({ name: '' });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
 
@@ -27,9 +27,9 @@ const TeamsList = () => {
   };
 
   const handleModalChange = (e) => {
-    setNewTitle(newTitle => ({
-      ...newTitle, name: e.target.value
-    }));
+    setNewTeam({
+      name: e.target.value
+    });
   };
 
   const handleModalSubmit = (e) => {
@@ -42,10 +42,11 @@ const TeamsList = () => {
         "X-CSRF-Token": token,
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(newTitle)
+      body: JSON.stringify(newTeam)
     })
       .then((response) => response.json())
-      .then((newTitle) => setTeams(newTitle));
+      .then((newTeam) => setTeams(teams.concat(newTeam)))
+      .then(() => setShow(false));
   };
 
   useEffect(() => {
@@ -91,7 +92,7 @@ const TeamsList = () => {
             </li>
           </ul>
         ))}
-        <ModalWindow show={show} newTitle={newTitle}
+        <ModalWindow show={show} newTitle={newTeam}
           handleModalClose={handleModalClose} handleModalOpen={handleModalOpen}
           handleModalChange={handleModalChange} handleModalSubmit={handleModalSubmit}
         />
