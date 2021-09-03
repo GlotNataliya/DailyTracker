@@ -1,10 +1,14 @@
 # DailyTracker
 
-DailyTracker is a simple and effective app for improoving team productivity
+DailyTracker is a simple and effective app for improving team productivity
 
 ## Requirements
 
-DailyTracker requires the following:
+DailyTracker requires the following: <br/>
+![Ruby](https://img.shields.io/badge/-Ruby-e74c3c?style=for-the-badge&logo=ruby&logoColor=b71540)
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?style=for-the-badge&logo=PostgreSQL&logoColor=ffffff)
+![Ruby on Rails](https://img.shields.io/badge/-Ruby_on_rails-b71540?style=for-the-badge&logo=ruby-on-rails&logoColor=f1f2f6)
+![React.js](https://img.shields.io/badge/-React-2d98da?style=for-the-badge&logo=React&logoColor=1e272e)
 - Ruby version 2.7.1
 - Rails version 6.0.3.4
 - PostgreSQL 9.2 and later
